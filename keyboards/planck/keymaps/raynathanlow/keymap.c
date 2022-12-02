@@ -44,7 +44,7 @@ bool is_alt_tab_active = false;
 #define SYM LT(_SYMBOLS, KC_SPC)
 #define NUM TG(_NUMBERS)
 #define NAV LT(_NAVIGATION, KC_SPC)
-#define L_NAV MO(_LEFT_NAVIGATION)
+#define L_NAV LT(_LEFT_NAVIGATION, KC_GRAVE)
 #define SWAPPER MO(_SWAPPER)
 #define MEDIA MO(_MEDIA)
 #define FUNCTION MO(_FUNCTION)
@@ -81,11 +81,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,         KC_Q,          KC_W,    KC_E,   KC_R,   KC_T,     KC_Y,   KC_U,   KC_I,     KC_O,    KC_P,     KC_BSPC,
     RCTL_T(KC_ESC), KC_A,          HOME_S,  HOME_D, HOME_F, KC_G,     KC_H,   HOME_J, HOME_K,   HOME_L,  KC_SCLN,  KC_QUOT,
     KC_LSFT,        KC_Z,          KC_X,    KC_C,   KC_V,   KC_B,     KC_N,   KC_M,   KC_COMMA, KC_DOT,  KC_SLASH, RSFT_T(KC_ENT),
-    KC_ESC,         OSM(MOD_LGUI), ALT_TAB, L_NAV,  SYM,    FUNCTION, MEDIA,  NAV,    KC_DEL,   _______, _______,  GAME
+    KC_LGUI,        OSM(MOD_LGUI), ALT_TAB, L_NAV,  SYM,    FUNCTION, MEDIA,  NAV,    KC_DEL,   _______, _______,  GAME
 ),
 
 [_COLEMAK] = LAYOUT_planck_grid(
-    _______, _______, _______, KC_F,    KC_P,    KC_G,    KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCOLON, _______,
+    _______, _______, _______, KC_F,    KC_P,    KC_G,    KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, _______,
     _______, KC_A,    HOME_R,  COLE_S,  HOME_T,  KC_D,    _______, HOME_N,  HOME_E,  HOME_I,  KC_O,      _______,
     _______, _______, _______, _______, _______, _______, KC_K,    _______, _______, _______, _______,   _______,
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,   _______
@@ -99,14 +99,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [_NUMBERS] = LAYOUT_planck_grid(
-    _______, _______, _______, _______, _______, _______, KC_NLCK, KC_P7,  KC_P8,   KC_P9,   KC_PMNS, KC_BSPC,
+    _______, _______, _______, _______, _______, _______, KC_LNUM, KC_P7,  KC_P8,   KC_P9,   KC_PMNS, KC_BSPC,
     _______, _______, _______, _______, _______, _______, _______, KC_P4,  KC_P5,   KC_P6,   KC_PPLS, KC_PAST,
     _______, _______, _______, _______, _______, _______, KC_COMM, KC_P1,  KC_P2,   KC_P3,   KC_EQL,  _______,
     _______, _______, _______, _______, KC_SPC,  _______, KC_SPC,  KC_P0,  KC_COMM, KC_PDOT, KC_PSLS, _______
 ),
 
 [_NAVIGATION] = LAYOUT_planck_grid(
-    _______, _______, _______, KC_LBRC, KC_RBRC, _______, KC_PAUS, KC_APP,  KC_UP,   KC_INS,   KC_SCROLLLOCK, _______,
+    _______, _______, _______, KC_LBRC, KC_RBRC, _______, KC_PAUS, KC_APP,  KC_UP,   KC_INS,   KC_SCROLL_LOCK, _______,
     _______, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, _______, KC_HOME, KC_LEFT, KC_DOWN, KC_RIGHT, KC_END,        _______,
     _______, _______, _______, _______, KC_TILD, _______, _______, _______, _______, _______,  _______,       _______,
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,  _______,       _______
@@ -148,9 +148,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [_ADJUST] = LAYOUT_planck_grid(
-    _______, RESET,   DEBUG,   RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD,  RGB_VAI, RGB_VAD, KC_DEL ,
-    QWERTY,  _______, MU_MOD,  AU_ON,   AU_OFF,  _______, KC_TAPP, KC_TAPD, KC_TAPU,  _______, _______, COLEMAK,
-    _______, MUV_DE,  MUV_IN,  MU_ON,   MU_OFF,  MI_ON,   MI_OFF,  TERM_ON, TERM_OFF, _______, _______, _______,
+    _______, RESET,   _______,   RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD,  RGB_VAI, RGB_VAD, KC_DEL ,
+    QWERTY,  _______, MU_MOD,  AU_ON,   AU_OFF,  _______, _______, _______, _______,  _______, _______, COLEMAK,
+    _______, MUV_DE,  MUV_IN,  MU_ON,   MU_OFF,  MI_ON,   MI_OFF,  _______, _______, _______, _______, _______,
     _______, _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______, _______
 ),
 };
